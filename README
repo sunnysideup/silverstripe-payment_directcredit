@@ -3,18 +3,29 @@ Direct Credit Payment
 Pre 0.1 proof of concept
 ###############################################
 
-Developer
+Adds the "Direct Credit" payment option to your
+e-commerce application. Direct Credit is where
+a customer pays from her / his bank account directly
+into the shops's bank account.
+
+Developers
 -----------------------------------------------
 Nicolaas Francken [at] sunnysideup.co.nz
 
+
 Requirements
 -----------------------------------------------
-Silverstripe 2.3+
+Ecommerce 1.0+ / SSU Branch
+Payment
+SilverStripe 2.4+
 
-Documentation
+Project Home
 -----------------------------------------------
-Provides additional payment gateways specific to the
-New Zealand market.
+See http://code.google.com/p/silverstripe-ecommerce
+
+Demo
+-----------------------------------------------
+See http://www.silverstripe-ecommerce.com
 
 Installation Instructions
 -----------------------------------------------
@@ -23,3 +34,7 @@ Installation Instructions
 into mysite/_config.php file and edit settings as required.
 NB. the idea is not to edit the module at all, but instead customise
 it from your mysite folder, so that you can upgrade the module without redoing the settings.
+
+If you just want one or two things from this module
+then of course you are free to copy them to your
+mysite folder and delete the rest of this module.
