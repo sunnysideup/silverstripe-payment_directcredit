@@ -15,12 +15,6 @@ class DirectCreditPayment extends ChequePayment {
 	 */
 	function processPayment($data, $form) {
 		$this->Status = 'Pending';
-		if(!self::$custom_message_for_direct_credit) {
-			$page = DataObject::get_one("CheckoutPage");
-			if($page) {
-				self::$custom_message_for_direct_credit = $page->ChequeMessage;
-			}
-		}
 		$this->Message = self::$custom_message_for_direct_credit;
 		$this->write();
 		return new Payment_Success();
@@ -38,3 +32,29 @@ class DirectCreditPayment extends ChequePayment {
 
 }
 
+class DirectCreditPayment_ViaCreditCart extends DirectCreditPayment {
+
+	protected static $custom_message_for_direct_credit_via_credit_cart = "";
+		static function set_custom_message_for_direct_credit_via_credit_cart($v) {self::$custom_message_for_direct_credit_via_credit_cart = $v;}
+
+	/**
+	 * Process the DirectCredit payment method
+	 */
+	function processPayment($data, $form) {
+		$this->Status = 'Pending';
+		$this->Message = self::$custom_message_for_direct_credit_via_credit_cart;
+		$this->write();
+		return new Payment_Success();
+	}
+
+	function getPaymentFormFields() {
+		return new FieldSet(
+			new HiddenField("DirectCredit", "DirectCredit", 0)
+		);
+	}
+
+	function getPaymentFormRequirements() {
+		return null;
+	}
+
+}
