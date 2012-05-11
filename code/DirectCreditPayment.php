@@ -49,7 +49,7 @@ class DirectCreditPayment_ViaCreditCart extends DirectCreditPayment {
 
 	function getPaymentFormFields() {
 		return new FieldSet(
-			new HiddenField("DirectCredit", "DirectCredit", 0)
+			new HiddenField("DirectCreditPayment_ViaCreditCart", "DirectCreditPayment_ViaCreditCart", 0)
 		);
 	}
 
