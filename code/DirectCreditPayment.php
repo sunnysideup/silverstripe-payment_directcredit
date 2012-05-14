@@ -32,7 +32,7 @@ class DirectCreditPayment extends ChequePayment {
 
 }
 
-class DirectCreditPayment_ViaCreditCart extends DirectCreditPayment {
+class DirectCreditPayment_ViaCreditCart  extends ChequePayment {
 
 	protected static $custom_message_for_direct_credit_via_credit_cart = "";
 		static function set_custom_message_for_direct_credit_via_credit_cart($v) {self::$custom_message_for_direct_credit_via_credit_cart = $v;}
