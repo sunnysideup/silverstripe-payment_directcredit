@@ -10,6 +10,12 @@
 //Payment::set_supported_methods(array('DirectCreditPayment' => 'Direct Credit Payment'));
 
 //MAY ADD
-//DirectCreditPayment::set_custom_message_for_direct_credit("your bank account here");
-//DirectCreditPayment_ViaCreditCart::set_custom_message_for_direct_credit_via_credit_cart("We will call you for your credit card");
+//DirectCreditPayment::set_before_payment_message("we will provide you with bank details");
+//DirectCreditPayment::set_after_payment_message("your bank account here");
+
+//DirectCreditPayment_ViaCreditCart::set_before_payment_message("you will need to contact us with your credit card details");
+//DirectCreditPayment_ViaCreditCart::set_after_payment_message("please contact us here .... to pay by credit card");
+
+//DirectCreditPayment_ViaCheque::set_before_payment_message("we will provide cheque details");
+//DirectCreditPayment_ViaCheque::set_after_payment_message("please make out the cheque to ....");
 //===================---------------- END payment_directcredit  MODULE ----------------===================

@@ -5,24 +5,39 @@
  * @author Nicolaas [at] sunnysideup.co.nz
  * @package payment
  */
-class DirectCreditPayment extends ChequePayment {
+class DirectCreditPayment extends Payment {
 
-	protected static $custom_message_for_direct_credit = "";
-		static function set_custom_message_for_direct_credit($v) {self::$custom_message_for_direct_credit = $v;}
+	/**
+	 * Message shown before payment is made
+	 * @var String
+	 */
+	protected static $before_payment_message = "";
+		static function set_before_payment_message($s) {self::$before_payment_message = $s;}
+		static function get_before_payment_message() {return self::$before_payment_message;}
+
+	/**
+	 * Message shown after payment is made
+	 * @var String
+	 */
+	protected static $after_payment_message = "";
+		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
+		static function get_after_payment_message() {return self::$after_payment_message;}
+
 
 	/**
 	 * Process the DirectCredit payment method
 	 */
 	function processPayment($data, $form) {
 		$this->Status = 'Pending';
-		$this->Message = self::$custom_message_for_direct_credit;
+		$this->Message = self::get_after_payment_message();
 		$this->write();
 		return new Payment_Success();
 	}
 
 	function getPaymentFormFields() {
 		return new FieldSet(
-			new HiddenField("DirectCredit", "DirectCredit", 0)
+			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
+			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
 	}
 
@@ -32,24 +47,81 @@ class DirectCreditPayment extends ChequePayment {
 
 }
 
-class DirectCreditPayment_ViaCreditCart  extends ChequePayment {
+class DirectCreditPayment_ViaCreditCart extends Payment {
 
-	protected static $custom_message_for_direct_credit_via_credit_cart = "";
-		static function set_custom_message_for_direct_credit_via_credit_cart($v) {self::$custom_message_for_direct_credit_via_credit_cart = $v;}
+	/**
+	 * Message shown before payment is made
+	 * @var String
+	 */
+	protected static $before_payment_message = "";
+		static function set_before_payment_message($s) {self::$before_payment_message = $s;}
+		static function get_before_payment_message() {return self::$before_payment_message;}
+
+	/**
+	 * Message shown after payment is made
+	 * @var String
+	 */
+	protected static $after_payment_message = "";
+		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
+		static function get_after_payment_message() {return self::$after_payment_message;}
+
 
 	/**
 	 * Process the DirectCredit payment method
 	 */
 	function processPayment($data, $form) {
 		$this->Status = 'Pending';
-		$this->Message = self::$custom_message_for_direct_credit_via_credit_cart;
+		$this->Message = self::get_after_payment_message();
 		$this->write();
 		return new Payment_Success();
 	}
 
 	function getPaymentFormFields() {
 		return new FieldSet(
-			new HiddenField("DirectCreditPayment_ViaCreditCart", "DirectCreditPayment_ViaCreditCart", 0)
+			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
+			new HiddenField($this->ClassName, $this->ClassName, 0)
+		);
+	}
+
+	function getPaymentFormRequirements() {
+		return null;
+	}
+
+}
+
+class DirectCreditPayment_ViaCheque  extends Payment {
+
+	/**
+	 * Message shown before payment is made
+	 * @var String
+	 */
+	protected static $before_payment_message = "";
+		static function set_before_payment_message($s) {self::$before_payment_message = $s;}
+		static function get_before_payment_message() {return self::$before_payment_message;}
+
+	/**
+	 * Message shown after payment is made
+	 * @var String
+	 */
+	protected static $after_payment_message = "";
+		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
+		static function get_after_payment_message() {return self::$after_payment_message;}
+
+
+	/**
+	 * Process the DirectCredit payment method
+	 */
+	function processPayment($data, $form) {
+		$this->Status = 'Pending';
+		$this->Message = self::get_after_payment_message();
+		$this->write();
+		return new Payment_Success();
+	}
+
+	function getPaymentFormFields() {
+		return new FieldSet(
+			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
+			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
 	}
 
