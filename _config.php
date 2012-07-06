@@ -12,10 +12,13 @@
 //MAY ADD
 //DirectCreditPayment::set_before_payment_message("we will provide you with bank details");
 //DirectCreditPayment::set_after_payment_message("your bank account here");
+//DirectCreditPayment::set_default_status("Pending");
 
 //DirectCreditPayment_ViaCreditCart::set_before_payment_message("you will need to contact us with your credit card details");
 //DirectCreditPayment_ViaCreditCart::set_after_payment_message("please contact us here .... to pay by credit card");
+//DirectCreditPayment_ViaCreditCart::set_default_status("Pending");
 
 //DirectCreditPayment_ViaCheque::set_before_payment_message("we will provide cheque details");
 //DirectCreditPayment_ViaCheque::set_after_payment_message("please make out the cheque to ....");
+//DirectCreditPayment_ViaCheque::set_default_status("Pending");
 //===================---------------- END payment_directcredit  MODULE ----------------===================

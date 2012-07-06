@@ -23,12 +23,20 @@ class DirectCreditPayment extends Payment {
 		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
 		static function get_after_payment_message() {return self::$after_payment_message;}
 
+	/**
+	 * Default Status for Payment
+	 * @var String
+	 */
+	protected static $default_status = "Pending";
+		static function set_default_status($s) {self::$default_status = $s;}
+		static function get_default_status() {return self::$default_status;}
+
 
 	/**
 	 * Process the DirectCredit payment method
 	 */
 	function processPayment($data, $form) {
-		$this->Status = 'Pending';
+		$this->Status = self::get_default_status();
 		$this->Message = self::get_after_payment_message();
 		$this->write();
 		return new Payment_Success();
@@ -65,12 +73,19 @@ class DirectCreditPayment_ViaCreditCart extends Payment {
 		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
 		static function get_after_payment_message() {return self::$after_payment_message;}
 
+	/**
+	 * Default Status for Payment
+	 * @var String
+	 */
+	protected static $default_status = "Pending";
+		static function set_default_status($s) {self::$default_status = $s;}
+		static function get_default_status() {return self::$default_status;}
 
 	/**
 	 * Process the DirectCredit payment method
 	 */
 	function processPayment($data, $form) {
-		$this->Status = 'Pending';
+		$this->Status = self::get_default_status();
 		$this->Message = self::get_after_payment_message();
 		$this->write();
 		return new Payment_Success();
@@ -107,12 +122,19 @@ class DirectCreditPayment_ViaCheque  extends Payment {
 		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
 		static function get_after_payment_message() {return self::$after_payment_message;}
 
+	/**
+	 * Default Status for Payment
+	 * @var String
+	 */
+	protected static $default_status = "Pending";
+		static function set_default_status($s) {self::$default_status = $s;}
+		static function get_default_status() {return self::$default_status;}
 
 	/**
 	 * Process the DirectCredit payment method
 	 */
 	function processPayment($data, $form) {
-		$this->Status = 'Pending';
+		$this->Status = self::get_default_status();
 		$this->Message = self::get_after_payment_message();
 		$this->write();
 		return new Payment_Success();
