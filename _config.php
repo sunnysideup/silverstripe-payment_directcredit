@@ -15,7 +15,7 @@ Payment::set_supported_methods(
 		'DirectCreditPayment_ViaCheque' => 'Direct Credit Payment',
 		'DirectCreditPayment_ViaCreditCart' => 'Direct Credit Payment',
 		'DirectCreditPayment_ViaCreditCart' => 'OffLine Credit Card',
-		'DirectCreditPayment_TESTSUCESS' => 'Test Successful Payment',
+		'DirectCreditPayment_TESTSUCCESS' => 'Test Successful Payment',
 		'DirectCreditPayment_TESTFAILURE' => 'Test Failed Payment'
 	)
 );
