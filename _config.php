@@ -7,7 +7,20 @@
 //copy the lines between the START AND END line to your /mysite/_config.php file and choose the right settings
 //===================---------------- START payment_directcredit MODULE ----------------===================
 //MUST ADD - you may also add other methods
-//Payment::set_supported_methods(array('DirectCreditPayment' => 'Direct Credit Payment'));
+/*
+ *
+Payment::set_supported_methods(
+	array(
+		'DirectCreditPayment' => 'Direct Credit Payment',
+		'DirectCreditPayment_ViaCheque' => 'Direct Credit Payment',
+		'DirectCreditPayment_ViaCreditCart' => 'Direct Credit Payment',
+		'DirectCreditPayment_ViaCreditCart' => 'OffLine Credit Card',
+		'DirectCreditPayment_TESTSUCESS' => 'Test Successful Payment',
+		'DirectCreditPayment_TESTFAILURE' => 'Test Failed Payment'
+	)
+);
+
+*/
 
 //MAY ADD
 //DirectCreditPayment::set_before_payment_message("we will provide you with bank details");
