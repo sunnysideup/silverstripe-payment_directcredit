@@ -225,7 +225,7 @@ class DirectCreditPayment_TESTFAILURE extends Payment {
 	 * Default Status for Payment
 	 * @var String
 	 */
-	protected static $default_status = "Success";
+	protected static $default_status = "Failure";
 		static function set_default_status($s) {self::$default_status = $s;}
 		static function get_default_status() {return self::$default_status;}
 
