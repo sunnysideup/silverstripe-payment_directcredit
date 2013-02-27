@@ -1,5 +1,5 @@
 {
-	"name": "silverstripe/payment_directcredit",
+	"name": "sunnysideup/payment_directcredit",
 	"type": "silverstripe-module",
 	"description": "add the direct credit (bank to bank) payment option to your silverstripe e-commerce and silverstripe payment modules.",
 	"homepage": "http://www.silverstripe-ecommerce.com",
