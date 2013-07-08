@@ -43,7 +43,7 @@ class DirectCreditPayment extends Payment {
 	}
 
 	function getPaymentFormFields() {
-		return new FieldSet(
+		return new FieldList(
 			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
 			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
@@ -92,7 +92,7 @@ class DirectCreditPayment_ViaCreditCart extends Payment {
 	}
 
 	function getPaymentFormFields() {
-		return new FieldSet(
+		return new FieldList(
 			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
 			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
@@ -141,7 +141,7 @@ class DirectCreditPayment_ViaCheque  extends Payment {
 	}
 
 	function getPaymentFormFields() {
-		return new FieldSet(
+		return new FieldList(
 			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
 			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
@@ -190,7 +190,7 @@ class DirectCreditPayment_TESTSUCCESS extends Payment {
 	}
 
 	function getPaymentFormFields() {
-		return new FieldSet(
+		return new FieldList(
 			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
 			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
@@ -240,7 +240,7 @@ class DirectCreditPayment_TESTFAILURE extends Payment {
 	}
 
 	function getPaymentFormFields() {
-		return new FieldSet(
+		return new FieldList(
 			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
 			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
