@@ -5,7 +5,7 @@
  * @author Nicolaas [at] sunnysideup.co.nz
  * @package payment
  */
-class DirectCreditPayment extends Payment {
+class DirectCreditPayment extends EcommercePayment {
 
 	/**
 	 * Message shown before payment is made
@@ -55,7 +55,7 @@ class DirectCreditPayment extends Payment {
 
 }
 
-class DirectCreditPayment_ViaCreditCart extends Payment {
+class DirectCreditPayment_ViaCreditCart extends EcommercePayment {
 
 	/**
 	 * Message shown before payment is made
@@ -104,7 +104,7 @@ class DirectCreditPayment_ViaCreditCart extends Payment {
 
 }
 
-class DirectCreditPayment_ViaCheque  extends Payment {
+class DirectCreditPayment_ViaCheque  extends EcommercePayment {
 
 	/**
 	 * Message shown before payment is made
@@ -153,7 +153,7 @@ class DirectCreditPayment_ViaCheque  extends Payment {
 
 }
 
-class DirectCreditPayment_TESTSUCCESS extends Payment {
+class DirectCreditPayment_TESTSUCCESS extends EcommercePayment {
 
 	/**
 	 * Message shown before payment is made
@@ -203,7 +203,7 @@ class DirectCreditPayment_TESTSUCCESS extends Payment {
 }
 
 
-class DirectCreditPayment_TESTFAILURE extends Payment {
+class DirectCreditPayment_TESTFAILURE extends EcommercePayment {
 
 	/**
 	 * Message shown before payment is made
