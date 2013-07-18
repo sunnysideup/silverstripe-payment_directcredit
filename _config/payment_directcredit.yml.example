@@ -1,0 +1,22 @@
+#########################################
+# START PAYMENT DIRECT CREDIT
+#########################################
+
+DirectCreditPayment:
+  before_payment_message: "we will provide you with bank details"
+  after_payment_message: "your bank account here"
+  default_status: "Pending"
+
+DirectCreditPayment_ViaCreditCart:
+  before_payment_message: "you will need to contact us with your credit card details"
+  after_payment_message: "please contact us here .... to pay by credit card"
+  default_status: "Pending"
+
+DirectCreditPayment_ViaCreditCart:
+  before_payment_message: "we will provide cheque details"
+  after_payment_message: "please make out the cheque to ...."
+  default_status: "Pending"
+
+#########################################
+# END PAYMENT DIRECT CREDIT
+#########################################

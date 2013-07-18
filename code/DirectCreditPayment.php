@@ -11,40 +11,34 @@ class DirectCreditPayment extends EcommercePayment {
 	 * Message shown before payment is made
 	 * @var String
 	 */
-	protected static $before_payment_message = "";
-		static function set_before_payment_message($s) {self::$before_payment_message = $s;}
-		static function get_before_payment_message() {return self::$before_payment_message;}
+	private static $before_payment_message = "";
 
 	/**
 	 * Message shown after payment is made
 	 * @var String
 	 */
-	protected static $after_payment_message = "";
-		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
-		static function get_after_payment_message() {return self::$after_payment_message;}
+	private static $after_payment_message = "";
 
 	/**
 	 * Default Status for Payment
 	 * @var String
 	 */
-	protected static $default_status = "Pending";
-		static function set_default_status($s) {self::$default_status = $s;}
-		static function get_default_status() {return self::$default_status;}
+	private static $default_status = "Pending";
 
 
 	/**
 	 * Process the DirectCredit payment method
 	 */
 	function processPayment($data, $form) {
-		$this->Status = self::get_default_status();
-		$this->Message = self::get_after_payment_message();
+		$this->Status = Config::inst()->get("DirectCreditPayment", "default_status");
+		$this->Message = Config::inst()->get("DirectCreditPayment", "after_payment_message");
 		$this->write();
 		return new Payment_Success();
 	}
 
 	function getPaymentFormFields() {
 		return new FieldList(
-			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
+			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment", "before_payment_message") . '</div>'),
 			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
 	}
@@ -61,39 +55,33 @@ class DirectCreditPayment_ViaCreditCart extends EcommercePayment {
 	 * Message shown before payment is made
 	 * @var String
 	 */
-	protected static $before_payment_message = "";
-		static function set_before_payment_message($s) {self::$before_payment_message = $s;}
-		static function get_before_payment_message() {return self::$before_payment_message;}
+	private static $before_payment_message = "";
 
 	/**
 	 * Message shown after payment is made
 	 * @var String
 	 */
-	protected static $after_payment_message = "";
-		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
-		static function get_after_payment_message() {return self::$after_payment_message;}
+	private static $after_payment_message = "";
 
 	/**
 	 * Default Status for Payment
 	 * @var String
 	 */
-	protected static $default_status = "Pending";
-		static function set_default_status($s) {self::$default_status = $s;}
-		static function get_default_status() {return self::$default_status;}
+	private static $default_status = "Pending";
 
 	/**
 	 * Process the DirectCredit payment method
 	 */
 	function processPayment($data, $form) {
-		$this->Status = self::get_default_status();
-		$this->Message = self::get_after_payment_message();
+		$this->Status = Config::inst()->get("DirectCreditPayment_ViaCreditCart", "default_status");
+		$this->Message = Config::inst()->get("DirectCreditPayment_ViaCreditCart", "after_payment_message");
 		$this->write();
 		return new Payment_Success();
 	}
 
 	function getPaymentFormFields() {
 		return new FieldList(
-			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
+			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_ViaCreditCart", "before_payment_message") . '</div>'),
 			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
 	}
@@ -110,39 +98,33 @@ class DirectCreditPayment_ViaCheque  extends EcommercePayment {
 	 * Message shown before payment is made
 	 * @var String
 	 */
-	protected static $before_payment_message = "";
-		static function set_before_payment_message($s) {self::$before_payment_message = $s;}
-		static function get_before_payment_message() {return self::$before_payment_message;}
+	private static $before_payment_message = "";
 
 	/**
 	 * Message shown after payment is made
 	 * @var String
 	 */
-	protected static $after_payment_message = "";
-		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
-		static function get_after_payment_message() {return self::$after_payment_message;}
+	private static $after_payment_message = "";
 
 	/**
 	 * Default Status for Payment
 	 * @var String
 	 */
-	protected static $default_status = "Pending";
-		static function set_default_status($s) {self::$default_status = $s;}
-		static function get_default_status() {return self::$default_status;}
+	private static $default_status = "Pending";
 
 	/**
 	 * Process the DirectCredit payment method
 	 */
 	function processPayment($data, $form) {
-		$this->Status = self::get_default_status();
-		$this->Message = self::get_after_payment_message();
+		$this->Status = Config::inst()->get("DirectCreditPayment_ViaCheque", "default_status");
+		$this->Message = Config::inst()->get("DirectCreditPayment_ViaCheque", "after_payment_message");
 		$this->write();
 		return new Payment_Success();
 	}
 
 	function getPaymentFormFields() {
 		return new FieldList(
-			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
+			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_ViaCheque", "before_payment_message") . '</div>'),
 			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
 	}
@@ -159,39 +141,33 @@ class DirectCreditPayment_TESTSUCCESS extends EcommercePayment {
 	 * Message shown before payment is made
 	 * @var String
 	 */
-	protected static $before_payment_message = "This is for testing purposes only";
-		static function set_before_payment_message($s) {self::$before_payment_message = $s;}
-		static function get_before_payment_message() {return self::$before_payment_message;}
+	private static $before_payment_message = "This is for testing purposes only";
 
 	/**
 	 * Message shown after payment is made
 	 * @var String
 	 */
-	protected static $after_payment_message = "Payment is always successful";
-		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
-		static function get_after_payment_message() {return self::$after_payment_message;}
+	private static $after_payment_message = "Payment is always successful";
 
 	/**
 	 * Default Status for Payment
 	 * @var String
 	 */
-	protected static $default_status = "Success";
-		static function set_default_status($s) {self::$default_status = $s;}
-		static function get_default_status() {return self::$default_status;}
+	private static $default_status = "Success";
 
 	/**
 	 * Process the DirectCredit payment method
 	 */
 	function processPayment($data, $form) {
-		$this->Status = self::get_default_status();
-		$this->Message = self::get_after_payment_message();
+		$this->Status = Config::inst()->get("DirectCreditPayment_TESTSUCCESS", "default_status");
+		$this->Message = Config::inst()->get("DirectCreditPayment_TESTSUCCESS", "after_payment_message");
 		$this->write();
 		return new Payment_Success();
 	}
 
 	function getPaymentFormFields() {
 		return new FieldList(
-			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
+			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_TESTSUCCESS", "before_payment_message") . '</div>'),
 			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
 	}
@@ -209,39 +185,33 @@ class DirectCreditPayment_TESTFAILURE extends EcommercePayment {
 	 * Message shown before payment is made
 	 * @var String
 	 */
-	protected static $before_payment_message = "This is for testing purposes only";
-		static function set_before_payment_message($s) {self::$before_payment_message = $s;}
-		static function get_before_payment_message() {return self::$before_payment_message;}
+	private static $before_payment_message = "This is for testing purposes only";
 
 	/**
 	 * Message shown after payment is made
 	 * @var String
 	 */
-	protected static $after_payment_message = "Payment is always unsuccessful";
-		static function set_after_payment_message($s) {self::$after_payment_message = $s;}
-		static function get_after_payment_message() {return self::$after_payment_message;}
+	private static $after_payment_message = "Payment is always unsuccessful";
 
 	/**
 	 * Default Status for Payment
 	 * @var String
 	 */
-	protected static $default_status = "Failure";
-		static function set_default_status($s) {self::$default_status = $s;}
-		static function get_default_status() {return self::$default_status;}
+	private static $default_status = "Failure";
 
 	/**
 	 * Process the DirectCredit payment method
 	 */
 	function processPayment($data, $form) {
-		$this->Status = self::get_default_status();
-		$this->Message = self::get_after_payment_message();
+		$this->Status = Config::inst()->get("DirectCreditPayment_TESTFAILURE", "default_status");
+		$this->Message = Config::inst()->get("DirectCreditPayment_TESTFAILURE", "after_payment_message");
 		$this->write();
 		return new Payment_Success();
 	}
 
 	function getPaymentFormFields() {
 		return new FieldList(
-			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . self::get_before_payment_message() . '</div>'),
+			new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_TESTFAILURE", "before_payment_message") . '</div>'),
 			new HiddenField($this->ClassName, $this->ClassName, 0)
 		);
 	}
