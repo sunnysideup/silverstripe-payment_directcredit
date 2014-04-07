@@ -1,7 +1,6 @@
-###############################################
+
 Direct Credit Payment
-Pre 0.1 proof of concept
-###############################################
+================================================================================
 
 Adds the "Direct Credit" payment option to your
 e-commerce application. Direct Credit is where
