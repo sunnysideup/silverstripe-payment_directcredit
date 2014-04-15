@@ -3,7 +3,7 @@
 	"type": "silverstripe-module",
 	"description": "add the direct credit (bank to bank) payment option to your silverstripe e-commerce and silverstripe payment modules.",
 	"homepage": "http://www.silverstripe-ecommerce.com",
-	"keywords": ["ecommerce", "e-commerce", "shop", "direct credit", "silverstripe"],
+	"keywords": ["ecommerce", "e-commerce", "shop", "direct credit", "silverstripe", "cart", "bank account pay"],
 	"license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
 	"authors":[
 		{
