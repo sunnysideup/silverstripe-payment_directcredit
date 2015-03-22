@@ -2,7 +2,7 @@
 # START PAYMENT DIRECT CREDIT
 #########################################
 
-Payment:
+EcommercePayment:
   supported_methods:
     - 'DirectCreditPayment' : 'Direct Credit Payment'
     - 'DirectCreditPayment_ViaCheque' : 'Direct Credit Payment'
