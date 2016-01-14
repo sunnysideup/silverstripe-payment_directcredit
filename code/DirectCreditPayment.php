@@ -76,7 +76,7 @@ class DirectCreditPayment_ViaCreditCart extends EcommercePayment {
 		$this->Status = Config::inst()->get("DirectCreditPayment_ViaCreditCart", "default_status");
 		$this->Message = Config::inst()->get("DirectCreditPayment_ViaCreditCart", "after_payment_message");
 		$this->write();
-		return new Payment_Success();
+		return EcommercePayment_Success::create();
 	}
 
 	function getPaymentFormFields() {
@@ -119,7 +119,7 @@ class DirectCreditPayment_ViaCheque  extends EcommercePayment {
 		$this->Status = Config::inst()->get("DirectCreditPayment_ViaCheque", "default_status");
 		$this->Message = Config::inst()->get("DirectCreditPayment_ViaCheque", "after_payment_message");
 		$this->write();
-		return new Payment_Success();
+		return EcommercePayment_Success::create();
 	}
 
 	function getPaymentFormFields() {
@@ -162,7 +162,7 @@ class DirectCreditPayment_TESTSUCCESS extends EcommercePayment {
 		$this->Status = Config::inst()->get("DirectCreditPayment_TESTSUCCESS", "default_status");
 		$this->Message = Config::inst()->get("DirectCreditPayment_TESTSUCCESS", "after_payment_message");
 		$this->write();
-		return new Payment_Success();
+		return EcommercePayment_Success::create();
 	}
 
 	function getPaymentFormFields() {
@@ -206,7 +206,7 @@ class DirectCreditPayment_TESTFAILURE extends EcommercePayment {
 		$this->Status = Config::inst()->get("DirectCreditPayment_TESTFAILURE", "default_status");
 		$this->Message = Config::inst()->get("DirectCreditPayment_TESTFAILURE", "after_payment_message");
 		$this->write();
-		return new Payment_Success();
+		return EcommercePayment_Success::create();
 	}
 
 	function getPaymentFormFields() {
