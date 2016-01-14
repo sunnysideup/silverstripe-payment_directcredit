@@ -33,7 +33,7 @@ class DirectCreditPayment extends EcommercePayment {
 		$this->Status = Config::inst()->get("DirectCreditPayment", "default_status");
 		$this->Message = Config::inst()->get("DirectCreditPayment", "after_payment_message");
 		$this->write();
-		return new Payment_Success();
+		return EcommercePayment_Success::create();
 	}
 
 	function getPaymentFormFields() {
