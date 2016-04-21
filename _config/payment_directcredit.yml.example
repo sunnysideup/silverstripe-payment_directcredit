@@ -4,11 +4,11 @@
 
 EcommercePayment:
   supported_methods:
-    - 'DirectCreditPayment' : 'Direct Credit Payment'
-    - 'DirectCreditPayment_ViaCheque' : 'Direct Credit Payment'
-    - 'DirectCreditPayment_ViaCreditCart' : 'Direct Credit Payment'
-    - 'DirectCreditPayment_TESTSUCCESS' : 'Test Successful Payment'
-    - 'DirectCreditPayment_TESTFAILURE' : 'Test Failed Payment'
+    'DirectCreditPayment' : 'Direct Credit Payment'
+    'DirectCreditPayment_ViaCheque' : 'Direct Credit Payment'
+    'DirectCreditPayment_ViaCreditCart' : 'Direct Credit Payment'
+    'DirectCreditPayment_TESTSUCCESS' : 'Test Successful Payment'
+    'DirectCreditPayment_TESTFAILURE' : 'Test Failed Payment'
 
 DirectCreditPayment:
   before_payment_message: "we will provide you with bank details"
