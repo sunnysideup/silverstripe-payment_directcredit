@@ -3,11 +3,13 @@
     "type": "silverstripe-module",
     "description": "add the direct credit (bank to bank) payment option to your silverstripe e-commerce and silverstripe payment modules.",
     "keywords": [
+        "Silverstripe-CMS",
+        "CMS",
+        "Silverstripe",
         "ecommerce",
         "e-commerce",
         "shop",
         "direct credit",
-        "silverstripe",
         "cart",
         "bank account pay"
     ],
@@ -20,7 +22,9 @@
         }
     ],
     "require": {
-        "sunnysideup/ecommerce": "dev-master"
+        "sunnysideup/ecommerce": "*",
+        "silverstripe/framework": "~3.1",
+        "silverstripe/cms": "~3.1"
     },
     "extra": {
         "installer-name": "payment_directcredit"
