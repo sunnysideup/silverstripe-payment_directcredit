@@ -38,7 +38,7 @@ class DirectCreditPayment extends EcommercePayment
         return EcommercePayment_Success::create();
     }
 
-    public function getPaymentFormFields()
+    public function getPaymentFormFields($amount = 0, $order = null)
     {
         return new FieldList(
             new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment", "before_payment_message") . '</div>'),
@@ -84,7 +84,7 @@ class DirectCreditPayment_ViaCreditCart extends EcommercePayment
         return EcommercePayment_Success::create();
     }
 
-    public function getPaymentFormFields()
+    public function getPaymentFormFields($amount = 0, $order = null)
     {
         return new FieldList(
             new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_ViaCreditCart", "before_payment_message") . '</div>'),
@@ -130,7 +130,7 @@ class DirectCreditPayment_ViaCheque extends EcommercePayment
         return EcommercePayment_Success::create();
     }
 
-    public function getPaymentFormFields()
+    public function getPaymentFormFields($amount = 0, $order = null)
     {
         return new FieldList(
             new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_ViaCheque", "before_payment_message") . '</div>'),
@@ -176,7 +176,7 @@ class DirectCreditPayment_TESTSUCCESS extends EcommercePayment
         return EcommercePayment_Success::create();
     }
 
-    public function getPaymentFormFields()
+    public function getPaymentFormFields($amount = 0, $order = null)
     {
         return new FieldList(
             new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_TESTSUCCESS", "before_payment_message") . '</div>'),
@@ -223,7 +223,7 @@ class DirectCreditPayment_TESTFAILURE extends EcommercePayment
         return EcommercePayment_Success::create();
     }
 
-    public function getPaymentFormFields()
+    public function getPaymentFormFields($amount = 0, $order = null)
     {
         return new FieldList(
             new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_TESTFAILURE", "before_payment_message") . '</div>'),
