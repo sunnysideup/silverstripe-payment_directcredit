@@ -29,13 +29,31 @@ class DirectCreditPayment_ViaCheque extends EcommercePayment
         $this->Status = Config::inst()->get("DirectCreditPayment_ViaCheque", "default_status");
         $this->Message = Config::inst()->get("DirectCreditPayment_ViaCheque", "after_payment_message");
         $this->write();
-        return EcommercePayment_Success::create();
+        return EcommercePaymentSuccess::create();
     }
 
     public function getPaymentFormFields($amount = 0, $order = null)
     {
         return new FieldList(
+
+/**
+  * ### @@@@ START REPLACEMENT @@@@ ###
+  * WHY: automated upgrade
+  * OLD: $this->ClassName (case sensitive)
+  * NEW: $this->ClassName (COMPLEX)
+  * EXP: Check if the class name can still be used as such
+  * ### @@@@ STOP REPLACEMENT @@@@ ###
+  */
             new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_ViaCheque", "before_payment_message") . '</div>'),
+
+/**
+  * ### @@@@ START REPLACEMENT @@@@ ###
+  * WHY: automated upgrade
+  * OLD: $this->ClassName (case sensitive)
+  * NEW: $this->ClassName (COMPLEX)
+  * EXP: Check if the class name can still be used as such
+  * ### @@@@ STOP REPLACEMENT @@@@ ###
+  */
             new HiddenField($this->ClassName, $this->ClassName, 0)
         );
     }
