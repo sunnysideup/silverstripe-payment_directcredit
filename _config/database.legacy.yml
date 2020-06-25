@@ -1,0 +1,7 @@
+SilverStripe\ORM\DatabaseAdmin:
+  classname_value_remapping:
+    DirectCreditPayment_ViaCheque: Sunnysideup\PaymentDirectcredit\DirectCreditPayment_ViaCheque
+    DirectCreditPayment_TESTSUCCESS: Sunnysideup\PaymentDirectcredit\DirectCreditPayment_TESTSUCCESS
+    DirectCreditPayment_ViaCreditCart: Sunnysideup\PaymentDirectcredit\DirectCreditPayment_ViaCreditCart
+    DirectCreditPayment_TESTFAILURE: Sunnysideup\PaymentDirectcredit\DirectCreditPayment_TESTFAILURE
+    DirectCreditPayment: Sunnysideup\PaymentDirectcredit\DirectCreditPayment
