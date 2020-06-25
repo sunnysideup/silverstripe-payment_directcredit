@@ -1,5 +1,15 @@
 <?php
 
+namespace Sunnysideup\PaymentDirectcredit;
+
+use EcommercePayment;
+use Config;
+use EcommercePaymentSuccess;
+use FieldList;
+use LiteralField;
+use HiddenField;
+
+
 class DirectCreditPayment_ViaCreditCart extends EcommercePayment
 {
 
