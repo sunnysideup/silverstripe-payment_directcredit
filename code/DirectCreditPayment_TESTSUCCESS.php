@@ -1,39 +1,33 @@
 <?php
 
-/**
- * Payment object representing a DirectCredit payment.
- * @author Nicolaas [at] sunnysideup.co.nz
- * @package payment
- */
-class DirectCreditPayment extends EcommercePayment
+class DirectCreditPayment_TESTSUCCESS extends EcommercePayment
 {
 
     /**
      * Message shown before payment is made
      * @var String
      */
-    private static $before_payment_message = "";
+    private static $before_payment_message = "This is for testing purposes only";
 
     /**
      * Message shown after payment is made
      * @var String
      */
-    private static $after_payment_message = "";
+    private static $after_payment_message = "Payment is always successful";
 
     /**
      * Default Status for Payment
      * @var String
      */
-    private static $default_status = "Pending";
-
+    private static $default_status = "Success";
 
     /**
      * Process the DirectCredit payment method
      */
     public function processPayment($data, $form)
     {
-        $this->Status = Config::inst()->get("DirectCreditPayment", "default_status");
-        $this->Message = Config::inst()->get("DirectCreditPayment", "after_payment_message");
+        $this->Status = Config::inst()->get("DirectCreditPayment_TESTSUCCESS", "default_status");
+        $this->Message = Config::inst()->get("DirectCreditPayment_TESTSUCCESS", "after_payment_message");
         $this->write();
         return EcommercePayment_Success::create();
     }
@@ -41,7 +35,7 @@ class DirectCreditPayment extends EcommercePayment
     public function getPaymentFormFields($amount = 0, $order = null)
     {
         return new FieldList(
-            new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment", "before_payment_message") . '</div>'),
+            new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_TESTSUCCESS", "before_payment_message") . '</div>'),
             new HiddenField($this->ClassName, $this->ClassName, 0)
         );
     }
@@ -51,4 +45,3 @@ class DirectCreditPayment extends EcommercePayment
         return null;
     }
 }
-

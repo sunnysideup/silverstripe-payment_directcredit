@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Payment object representing a DirectCredit payment.
- * @author Nicolaas [at] sunnysideup.co.nz
- * @package payment
- */
-class DirectCreditPayment extends EcommercePayment
+class DirectCreditPayment_ViaCheque extends EcommercePayment
 {
 
     /**
@@ -26,14 +21,13 @@ class DirectCreditPayment extends EcommercePayment
      */
     private static $default_status = "Pending";
 
-
     /**
      * Process the DirectCredit payment method
      */
     public function processPayment($data, $form)
     {
-        $this->Status = Config::inst()->get("DirectCreditPayment", "default_status");
-        $this->Message = Config::inst()->get("DirectCreditPayment", "after_payment_message");
+        $this->Status = Config::inst()->get("DirectCreditPayment_ViaCheque", "default_status");
+        $this->Message = Config::inst()->get("DirectCreditPayment_ViaCheque", "after_payment_message");
         $this->write();
         return EcommercePayment_Success::create();
     }
@@ -41,7 +35,7 @@ class DirectCreditPayment extends EcommercePayment
     public function getPaymentFormFields($amount = 0, $order = null)
     {
         return new FieldList(
-            new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment", "before_payment_message") . '</div>'),
+            new LiteralField($this->ClassName.'_BeforeMessage', '<div id="'.$this->ClassName.'_BeforeMessage">' . Config::inst()->get("DirectCreditPayment_ViaCheque", "before_payment_message") . '</div>'),
             new HiddenField($this->ClassName, $this->ClassName, 0)
         );
     }
@@ -51,4 +45,3 @@ class DirectCreditPayment extends EcommercePayment
         return null;
     }
 }
-
