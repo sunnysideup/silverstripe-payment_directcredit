@@ -9,12 +9,7 @@ use SilverStripe\Forms\LiteralField;
 use Sunnysideup\Ecommerce\Model\Money\EcommercePayment;
 use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
 
-/**
- * Payment object representing a DirectCredit payment.
- * @author Nicolaas [at] sunnysideup.co.nz
- * @package payment
- */
-class DirectCreditPayment extends EcommercePayment
+class DirectCreditPayment_ViaCheque extends EcommercePayment
 {
     /**
      * Message shown before payment is made
@@ -39,8 +34,8 @@ class DirectCreditPayment extends EcommercePayment
      */
     public function processPayment($data, $form)
     {
-        $this->Status = Config::inst()->get(DirectCreditPayment::class, 'default_status');
-        $this->Message = Config::inst()->get(DirectCreditPayment::class, 'after_payment_message');
+        $this->Status = Config::inst()->get(DirectCreditPaymentViaCheque::class, 'default_status');
+        $this->Message = Config::inst()->get(DirectCreditPaymentViaCheque::class, 'after_payment_message');
         $this->write();
         return EcommercePaymentSuccess::create();
     }
@@ -48,7 +43,7 @@ class DirectCreditPayment extends EcommercePayment
     public function getPaymentFormFields($amount = 0, $order = null)
     {
         return new FieldList(
-            new LiteralField($this->ClassName . '_BeforeMessage', '<div id="' . $this->ClassName . '_BeforeMessage">' . Config::inst()->get(DirectCreditPayment::class, 'before_payment_message') . '</div>'),
+            new LiteralField($this->ClassName . '_BeforeMessage', '<div id="' . $this->ClassName . '_BeforeMessage">' . Config::inst()->get(DirectCreditPaymentViaCheque::class, 'before_payment_message') . '</div>'),
             new HiddenField($this->ClassName, $this->ClassName, 0)
         );
     }

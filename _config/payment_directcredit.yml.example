@@ -5,10 +5,10 @@
 EcommercePayment:
   supported_methods:
     'DirectCreditPayment' : 'Direct Credit Payment'
-    'DirectCreditPayment_ViaCheque' : 'Direct Credit Payment'
-    'DirectCreditPayment_ViaCreditCart' : 'Direct Credit Payment'
-    'DirectCreditPayment_TESTSUCCESS' : 'Test Successful Payment'
-    'DirectCreditPayment_TESTFAILURE' : 'Test Failed Payment'
+    'DirectCreditPaymentViaCheque' : 'Direct Credit Payment'
+    'DirectCreditPaymentViaCreditCart' : 'Direct Credit Payment'
+    'DirectCreditPaymentTESTSUCCESS' : 'Test Successful Payment'
+    'DirectCreditPaymentTESTFAILURE' : 'Test Failed Payment'
 
 DirectCreditPayment:
   before_payment_message: "we will provide you with bank details"
@@ -16,14 +16,14 @@ DirectCreditPayment:
   # consider using Success for dev environments.
   default_status: "Pending"
 
-# only useful if you set DirectCreditPayment_ViaCheque to be available
-DirectCreditPayment_ViaCheque:
+# only useful if you set DirectCreditPaymentViaCheque to be available
+DirectCreditPaymentViaCheque:
   before_payment_message: "we will provide cheque details"
   after_payment_message: "please make out the cheque to ...."
   default_status: "Pending"
 
-# only useful if you set DirectCreditPayment_ViaCreditCart to be available
-DirectCreditPayment_ViaCreditCart:
+# only useful if you set DirectCreditPaymentViaCreditCart to be available
+DirectCreditPaymentViaCreditCart:
   before_payment_message: "you will need to contact us with your credit card details"
   after_payment_message: "please contact us here .... to pay by credit card"
   default_status: "Pending"
