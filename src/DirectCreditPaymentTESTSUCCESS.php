@@ -35,7 +35,7 @@ class DirectCreditPaymentTESTSUCCESS extends EcommercePayment
     public function processPayment($data, $form)
     {
         $this->Status = Config::inst()->get(DirectCreditPaymentTESTSUCCESS::class, 'default_status');
-        $this->Message = Config::inst()->get(DirectCreditPaymenTESTSUCCESS::class, 'after_payment_message');
+        $this->Message = Config::inst()->get(DirectCreditPaymentTESTSUCCESS::class, 'after_payment_message');
         $this->write();
         return EcommercePaymentSuccess::create();
     }

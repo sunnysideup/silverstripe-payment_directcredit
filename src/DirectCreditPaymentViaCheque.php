@@ -9,7 +9,7 @@ use SilverStripe\Forms\LiteralField;
 use Sunnysideup\Ecommerce\Model\Money\EcommercePayment;
 use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
 
-class DirectCreditPayment_ViaCheque extends EcommercePayment
+class DirectCreditPaymentViaCheque extends EcommercePayment
 {
     /**
      * Message shown before payment is made
