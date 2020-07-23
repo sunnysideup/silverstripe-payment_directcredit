@@ -6,6 +6,7 @@ use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HiddenField;
 use SilverStripe\Forms\LiteralField;
+use Sunnysideup\Ecommerce\Forms\OrderForm;
 use Sunnysideup\Ecommerce\Model\Money\EcommercePayment;
 use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
 
@@ -37,7 +38,7 @@ class DirectCreditPayment extends EcommercePayment
     /**
      * Process the DirectCredit payment method
      */
-    public function processPayment($data, $form)
+    public function processPayment($data, OrderForm $form)
     {
         $this->Status = Config::inst()->get(DirectCreditPayment::class, 'default_status');
         $this->Message = Config::inst()->get(DirectCreditPayment::class, 'after_payment_message');
