@@ -49,8 +49,8 @@ class DirectCreditPaymentViaCreditCart extends EcommercePayment
         );
     }
 
-    public function getPaymentFormRequirements()
+    public function getPaymentFormRequirements(): array
     {
-        return null;
+        return [];
     }
 }
