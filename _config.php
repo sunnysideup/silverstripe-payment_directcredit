@@ -1,4 +1,2 @@
 <?php
-/**
- * @author nicolaas [at] www.sunnysideup.co.nz
-**/
+// @author nicolaas [at] www.sunnysideup.co.nz

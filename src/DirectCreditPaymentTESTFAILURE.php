@@ -14,31 +14,37 @@ use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
 class DirectCreditPaymentTESTFAILURE extends EcommercePayment
 {
     /**
-     * Message shown before payment is made
+     * Message shown before payment is made.
+     *
      * @var string
      */
     private static $before_payment_message = 'This is for testing purposes only';
 
     /**
-     * Message shown after payment is made
+     * Message shown after payment is made.
+     *
      * @var string
      */
     private static $after_payment_message = 'Payment is always unsuccessful';
 
     /**
-     * Default Status for Payment
+     * Default Status for Payment.
+     *
      * @var string
      */
     private static $default_status = 'Failure';
 
     /**
-     * Process the DirectCredit payment method
+     * Process the DirectCredit payment method.
+     *
+     * @param mixed $data
      */
     public function processPayment($data, OrderForm $form)
     {
         $this->Status = Config::inst()->get(DirectCreditPaymentTESTFAILURE::class, 'default_status');
         $this->Message = Config::inst()->get(DirectCreditPaymentTESTFAILURE::class, 'after_payment_message');
         $this->write();
+
         return EcommercePaymentSuccess::create();
     }
 
