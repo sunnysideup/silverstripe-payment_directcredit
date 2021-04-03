@@ -8,8 +8,8 @@ use SilverStripe\Forms\HiddenField;
 use SilverStripe\Forms\LiteralField;
 use Sunnysideup\Ecommerce\Forms\OrderForm;
 use Sunnysideup\Ecommerce\Model\Money\EcommercePayment;
-use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
 use Sunnysideup\Ecommerce\Model\Order;
+use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
 
 class DirectCreditPaymentViaCheque extends EcommercePayment
 {
@@ -42,7 +42,7 @@ class DirectCreditPaymentViaCheque extends EcommercePayment
         return EcommercePaymentSuccess::create();
     }
 
-    public function getPaymentFormFields(?float $amount = 0, ?Order $order = null) : FieldList
+    public function getPaymentFormFields(?float $amount = 0, ?Order $order = null): FieldList
     {
         return new FieldList(
             new LiteralField($this->ClassName . '_BeforeMessage', '<div id="' . $this->ClassName . '_BeforeMessage">' . Config::inst()->get(DirectCreditPaymentViaCheque::class, 'before_payment_message') . '</div>'),
