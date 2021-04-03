@@ -9,6 +9,7 @@ use SilverStripe\Forms\LiteralField;
 use Sunnysideup\Ecommerce\Forms\OrderForm;
 use Sunnysideup\Ecommerce\Model\Money\EcommercePayment;
 use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
+use Sunnysideup\Ecommerce\Model\Order;
 
 class DirectCreditPaymentViaCreditCart extends EcommercePayment
 {
@@ -41,7 +42,7 @@ class DirectCreditPaymentViaCreditCart extends EcommercePayment
         return EcommercePaymentSuccess::create();
     }
 
-    public function getPaymentFormFields($amount = 0, $order = null)
+    public function getPaymentFormFields(?float $amount = 0, ?Order $order = null) : FieldList
     {
         return new FieldList(
             new LiteralField($this->ClassName . '_BeforeMessage', '<div id="' . $this->ClassName . '_BeforeMessage">' . Config::inst()->get(DirectCreditPaymentViaCreditCart::class, 'before_payment_message') . '</div>'),
