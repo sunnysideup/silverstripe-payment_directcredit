@@ -48,7 +48,7 @@ class DirectCreditPaymentViaCreditCart extends EcommercePayment
         return EcommercePaymentSuccess::create();
     }
 
-    public function getPaymentFormFields(?float $amount = 0, ?Order $order = null): FieldList
+    public function getPaymentFormFields($amount = 0, ?Order $order = null): FieldList
     {
         return new FieldList(
             new LiteralField($this->ClassName . '_BeforeMessage', '<div id="' . $this->ClassName . '_BeforeMessage">' . Config::inst()->get(DirectCreditPaymentViaCreditCart::class, 'before_payment_message') . '</div>'),
