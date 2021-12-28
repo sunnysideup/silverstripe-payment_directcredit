@@ -32,7 +32,7 @@ class DirectCreditPaymentTESTFAILURE extends EcommercePayment
      *
      * @var string
      */
-    private static $default_status = 'Failure';
+    private static $default_status = EcommercePayment::FAILURE_STATUS;
 
     /**
      * Process the DirectCredit payment method.

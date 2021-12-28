@@ -32,7 +32,7 @@ class DirectCreditPaymentViaCheque extends EcommercePayment
      *
      * @var string
      */
-    private static $default_status = 'Pending';
+    private static $default_status = EcommercePayment::PENDING_STATUS;
 
     /**
      * Process the DirectCredit payment method.
