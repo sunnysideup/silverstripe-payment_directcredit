@@ -14,7 +14,6 @@ use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
 /**
  * Payment object representing a DirectCredit payment.
  *
- * @author Nicolaas [at] sunnysideup.co.nz
  */
 class DirectCreditPayment extends EcommercePayment
 {

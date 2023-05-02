@@ -11,6 +11,10 @@ use Sunnysideup\Ecommerce\Model\Money\EcommercePayment;
 use Sunnysideup\Ecommerce\Model\Order;
 use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
 
+/**
+ * Class \Sunnysideup\PaymentDirectcredit\DirectCreditPaymentViaCheque
+ *
+ */
 class DirectCreditPaymentViaCheque extends EcommercePayment
 {
     /**
