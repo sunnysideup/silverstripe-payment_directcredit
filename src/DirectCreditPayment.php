@@ -55,7 +55,12 @@ class DirectCreditPayment extends EcommercePayment
     public function getPaymentFormFields($amount = 0, ?Order $order = null): FieldList
     {
         return new FieldList(
-            new LiteralField($this->ClassName . '_BeforeMessage', '<div id="' . $this->ClassName . '_BeforeMessage">' . Config::inst()->get(DirectCreditPayment::class, 'before_payment_message') . '</div>'),
+            new LiteralField(
+                $this->ClassName . '_BeforeMessage',
+                '<div id="' . $this->ClassName . '_BeforeMessage">' .
+                    Config::inst()->get(DirectCreditPayment::class, 'before_payment_message') .
+                    '</div>'
+            ),
             new HiddenField($this->ClassName, $this->ClassName, 0)
         );
     }
