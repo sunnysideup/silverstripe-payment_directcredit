@@ -22,14 +22,14 @@ class DirectCreditPayment extends EcommercePayment
      *
      * @var string
      */
-    private static $before_payment_message = '';
+    private static $before_payment_message = 'Pay by direct credit into our bank account.';
 
     /**
      * Message shown after payment is made.
      *
      * @var string
      */
-    private static $after_payment_message = '';
+    private static $after_payment_message = 'Please transfer the payment to our bank account. We will send you our bank account.';
 
     /**
      * Default Status for Payment.
