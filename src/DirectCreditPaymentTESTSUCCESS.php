@@ -13,7 +13,6 @@ use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
 
 /**
  * Class \Sunnysideup\PaymentDirectcredit\DirectCreditPaymentTESTSUCCESS
- *
  */
 class DirectCreditPaymentTESTSUCCESS extends EcommercePayment
 {
