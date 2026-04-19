@@ -2,6 +2,7 @@
 
 namespace Sunnysideup\PaymentDirectcredit;
 
+use Override;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Form;
@@ -16,6 +17,8 @@ use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentSuccess;
  */
 class DirectCreditPayment extends EcommercePayment
 {
+    private static $table_name = 'DirectCreditPayment';
+
     /**
      * Message shown before payment is made.
      *
@@ -42,6 +45,7 @@ class DirectCreditPayment extends EcommercePayment
      *
      * @param mixed $data
      */
+    #[Override]
     public function processPayment($data, Form $form)
     {
         $this->Status = Config::inst()->get(DirectCreditPayment::class, 'default_status');
@@ -51,19 +55,15 @@ class DirectCreditPayment extends EcommercePayment
         return EcommercePaymentSuccess::create();
     }
 
+    #[Override]
     public function getPaymentFormFields($amount = 0, ?Order $order = null): FieldList
     {
-        return new FieldList(
-            new LiteralField(
-                $this->ClassName . '_BeforeMessage',
-                '<div id="' . $this->ClassName . '_BeforeMessage">' .
-                    Config::inst()->get(DirectCreditPayment::class, 'before_payment_message') .
-                    '</div>'
-            ),
-            new HiddenField($this->ClassName, $this->ClassName, 0)
-        );
+        return FieldList::create(LiteralField::create($this->ClassName . '_BeforeMessage', '<div id="' . $this->ClassName . '_BeforeMessage">' .
+            Config::inst()->get(DirectCreditPayment::class, 'before_payment_message') .
+            '</div>'), HiddenField::create($this->ClassName, $this->ClassName, 0));
     }
 
+    #[Override]
     public function getPaymentFormRequirements(): array
     {
         return [];
