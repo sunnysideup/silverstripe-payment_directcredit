@@ -1,0 +1,6 @@
+---
+Name: payment-directcredit-config
+---
+Sunnysideup\Ecommerce\Model\Config\EcommerceDBConfig:
+  extensions:
+    - Sunnysideup\PaymentDirectcredit\EcommerceConfigExtension

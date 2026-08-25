@@ -3,6 +3,7 @@
 namespace Sunnysideup\PaymentDirectcredit;
 
 use SilverStripe\Core\Config\Config;
+use Sunnysideup\Ecommerce\Config\EcommerceConfig;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Form;
 use SilverStripe\Forms\HiddenField;
@@ -45,7 +46,7 @@ class DirectCreditPayment extends EcommercePayment
     public function processPayment($data, Form $form)
     {
         $this->Status = Config::inst()->get(DirectCreditPayment::class, 'default_status');
-        $this->Message = Config::inst()->get(DirectCreditPayment::class, 'after_payment_message');
+        $this->Message = $this->afterPaymentMessage();
         $this->write();
 
         return EcommercePaymentSuccess::create();
@@ -67,5 +68,15 @@ class DirectCreditPayment extends EcommercePayment
     public function getPaymentFormRequirements(): array
     {
         return [];
+    }
+
+    protected function afterPaymentMessage(): string
+    {
+        $message = (string) EcommerceConfig::inst()->DirectCreditPaymentAfterMessage;
+        if ($message) {
+            return $message;
+        }
+
+        return (string) Config::inst()->get(DirectCreditPayment::class, 'after_payment_message');
     }
 }
